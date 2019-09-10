@@ -9,44 +9,24 @@
 <body>
 
 
-<nav>
-        <div class="nav-wrapper">
-            <a href="#!" class="brand-logo">Logo</a>
-            <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
-            <?php
+<header class="site-header">
+        <div class="contenedor header-grid">
+                <div class="barra-navegacion">
+                    <div >
+                        <a href="<?php echo esc_url(site_url('/')) ?>">
+                            <img src="<?php echo get_template_directory_uri(); ?>/img/logo.png" alt="logo" class="logo">
+                            <!-- echo get_template_directory_uri(); nos sirve para sacar la ruta de un directorio -->
+                        </a>
+                    </div>
 
-            $menu = array(
-                'theme_location'  => 'menu-principal',
-                'menu_class'      => 'right hide-on-med-and-down',
-                'container'       => false,
-                'depth'           => 1
-            );
-            $menuMobile = array(
-                'theme_location'  => 'menu-principal',
-                'menu_class'      => 'side-nav',
-                'menu_id'         => 'mobile-demo',
-                'container'       => false,
-                'depth'           => 1
-
-            );
-            wp_nav_menu($menu);
-
-            wp_nav_menu($menuMobile);
-
-            ?>
-
-            </ul>
+                    <?php
+                        $args = array(
+                            'theme_location' => 'menu-principal', 
+                            'container' => 'nav',
+                            'container_class' => 'menu-principal'
+                        );
+                        wp_nav_menu($args);
+                    ?>
+                </div> <!--.barra-navegacion -->
         </div>
-    </nav>
-
-
-    <nav>
-        <div class="nav-wrapper">
-                <a href="#" class="brand-logo">Logo</a>
-                <ul id="nav-mobile" class="right hide-on-med-and-down">
-                    <li><a href="sass.html">Sass</a></li>
-                    <li><a href="badges.html">Components</a></li>
-                    <li><a href="collapsible.html">JavaScript</a></li>
-                </ul>
-        </div>
-  </nav>    
+</header>

@@ -10,7 +10,7 @@ Text Domain: pruebas template
 */
 
 
-/*
+
 :root{
     --fuentePrincipal: 'Dancing Script', cursive;
 }
@@ -18,7 +18,7 @@ Text Domain: pruebas template
 h1{
     font-family: var(--fuentePrincipal);
 }
-*/
+
 
 .logo{
     width: 50px;
